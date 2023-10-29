@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{B39954E3-195D-4D13-BE53-5F0CC6A3E490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortenerService", "UrlShortenerService\UrlShortenerService.csproj", "{05F95199-3346-42C6-9000-B50FEC8D2E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Library", "UrlShortener.Library\UrlShortener.Library.csproj", "{0D80CCB6-1437-4DBE-A18F-B212CEA66006}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{12B1017C-AF4B-4D1A-9E5E-7B570E3D374F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B39954E3-195D-4D13-BE53-5F0CC6A3E490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39954E3-195D-4D13-BE53-5F0CC6A3E490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39954E3-195D-4D13-BE53-5F0CC6A3E490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39954E3-195D-4D13-BE53-5F0CC6A3E490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F95199-3346-42C6-9000-B50FEC8D2E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F95199-3346-42C6-9000-B50FEC8D2E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F95199-3346-42C6-9000-B50FEC8D2E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F95199-3346-42C6-9000-B50FEC8D2E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D80CCB6-1437-4DBE-A18F-B212CEA66006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D80CCB6-1437-4DBE-A18F-B212CEA66006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D80CCB6-1437-4DBE-A18F-B212CEA66006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D80CCB6-1437-4DBE-A18F-B212CEA66006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B39954E3-195D-4D13-BE53-5F0CC6A3E490} = {12B1017C-AF4B-4D1A-9E5E-7B570E3D374F}
+		{05F95199-3346-42C6-9000-B50FEC8D2E71} = {12B1017C-AF4B-4D1A-9E5E-7B570E3D374F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97B73010-2BEA-43A6-9618-A936AC6834C3}
+	EndGlobalSection
+EndGlobal
