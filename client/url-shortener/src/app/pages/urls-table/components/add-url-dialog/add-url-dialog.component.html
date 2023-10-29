@@ -1,0 +1,47 @@
+<div class="inset-0 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-xl w-96">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Add New URL</h2>
+        <div>
+            <form class="mt-8 space-y-4" [formGroup]="addUrlForm" (submit)="onAddUrl()">                
+                <div>
+                    <label for="url" class="block text-gray-600 font-medium mb-2">URL</label>
+                    <input
+                        id="url"
+                        formControlName="originalUrl"
+                        class="w-full border border-gray-400 rounded-lg p-2"
+                    >
+                </div>
+                <div>
+                    <label for="urlDescription" class="block text-gray-600 font-medium mb-2">URL Description</label>
+                    <textarea
+                        id="urlDescription"
+                        formControlName="description"
+                        class="w-full border border-gray-400 rounded-lg p-2"
+                    >
+                    </textarea>
+                </div>
+                <small
+                    class="text-red-600"
+                >
+                    {{addUrlErrorMessage}}
+                </small>        
+                <div class="text-right">
+                    <button 
+                        type="submit" 
+                        class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded"
+                    >
+                        Add
+                    </button>
+                    <button 
+                        (click)="onCloseDialog()" 
+                        type="button" 
+                        class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded ml-2"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </form>         
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,68 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-700 to-gray-100">
+    <div class="bg-white rounded-lg p-8 shadow-md max-w-md w-full">
+      <h1 class="text-2xl font-semibold mb-4 text-center"><a routerLink="/url-table">URL Shortener</a></h1>
+      <div>
+        <form class="mt-8 space-y-4" [formGroup]="loginForm" (submit)="onLogin()">
+            <div 
+              class="flex group border border-gray-500 rounded-md focus-within:border-blue-500"
+              [ngClass]="{'border-red-500' : loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')}"
+              > 
+                <div>
+                  <span class="fa fa-user self-center m-2" aria-hidden="true"></span>
+                </div> 
+                <input 
+                  formControlName="email" 
+                  type="email" 
+                  placeholder="Email" 
+                  class="w-full px-1 py-1 placeholder-gray-500 rounded-md focus:outline-none"
+                >
+            </div>
+            <small 
+              *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')"
+              class="text-red-600"
+            >
+              *Email is required
+            </small>
+            <div 
+              class="flex group border border-gray-500 rounded-md focus-within:border-blue-500"
+              [ngClass]="{'border-red-500' : loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')}"
+            >
+              <div>
+                <span class="fa fa-lock self-center m-2" aria-hidden="true"></span>
+              </div> 
+              <input 
+                formControlName="password" 
+                [type]="type" 
+                placeholder="Password" 
+                class="w-full px-1 py-1 placeholder-gray-500 rounded-md focus:outline-none"
+              >
+              <div>
+                <span (click)="hideShowPassword()" class="fa {{eyeIcon}} self-center m-2 cursor-pointer" aria-hidden="true"></span>
+              </div> 
+            </div>  
+            <small 
+              *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')" 
+              class="text-red-600"
+            >
+              *Password is required
+            </small>
+            <small
+                class="text-red-600"
+            >
+                {{loginErrorMessage}}
+            </small>                     
+            <button 
+              [disabled]="loginForm.invalid" 
+              type="submit" 
+              class="w-full px-2 py-1 text-white {{ loginForm.invalid ? 'bg-gray-400' : 'bg-gray-500 hover:bg-gray-600' }} rounded-md"
+            >
+              Sign In
+            </button>
+            <div class="text-center text-sm text-gray-400">
+                Don't have an account?
+                <a class="text-blue-400 hover:underline" routerLink="/sign-up">Sign up</a>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

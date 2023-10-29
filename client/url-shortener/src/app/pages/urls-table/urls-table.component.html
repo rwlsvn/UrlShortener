@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center">
+    <div class="container mx-20">
+        <div class="m-2">
+            <button
+                *ngIf="isLoggedIn"
+                (click)="openAddUrlDialog()"
+                class="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md"
+            >
+                New Url
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="m-2">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden" style="width: 100%;">
+                <thead>
+                    <tr>
+                      <th class="px-6 py-3 text-left font-semibold text-gray-600" style="max-width: 75%;">Original Url</th>
+                      <th class="px-6 py-3 text-left font-semibold text-gray-600" style="max-width: 25%;">Short Url</th>
+                      <th class="px-6 py-3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let url of urls" class="hover:bg-gray-100 border-b border-gray-400">        
+                        <td class="px-6 py-4 w-4/6 whitespace-pre-wrap">
+                            <a [href]="url.originalUrl" target="_blank" class="text-blue-500 hover:text-blue-700 underline">
+                                {{url.originalUrl}}
+                            </a>
+                        </td>
+                        <td class="px-6 py-4 w-1/6 whitespace-pre-wrap">
+                            <a [href]="shortUrlBase + url.url" target="_blank" class="text-blue-500 hover:text-blue-700 underline">
+                                {{shortUrlBase + url.url}}
+                            </a>
+                        </td>
+                        <td class="px-6 py-4 w-1/6">
+                            <div class="flex justify-end">
+                                <button
+                                    *ngIf="isLoggedIn"
+                                    (click)="openUrlInfoDialog(url.id)" 
+                                    class="w-12 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 my-1 mx-1 rounded-md"
+                                > 
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                </button>
+                                <button 
+                                    *ngIf="userId === url.userId || roles.includes('admin')"
+                                    (click)="openDeleteUrlDialog(url.id)" 
+                                    class="w-12 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 my-1 mx-1 rounded-md"
+                                >
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </td>
+                      </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>

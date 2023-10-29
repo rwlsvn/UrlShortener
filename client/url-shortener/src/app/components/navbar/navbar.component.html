@@ -1,0 +1,22 @@
+<nav class="bg-gray-600 p-4">
+    <div class="mx-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <a routerLink="/url-table" class="text-white text-2xl font-bold mx-5">URL Shortener</a>
+                <span *ngIf="isLoggedIn" class="text-white mx-5">Hi, {{username}}!</span>
+            </div>
+            <div class="flex">   
+                <a routerLink="/url-table" class="text-white mr-4">URL Table</a>
+                <a routerLink="/about" class="text-white mr-4">About</a>
+                <div class="ml-5">
+                    <a *ngIf="!isLoggedIn" routerLink="/sign-in" class="text-white mr-4">Sign In</a>
+                    <a *ngIf="!isLoggedIn" routerLink="/sign-up" class="text-white mr-4">Sign Up</a>
+                    <button *ngIf="isLoggedIn" (click)="onSignOut()" class="text-white mr-4">
+                        Sign Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>   
+</nav>
+

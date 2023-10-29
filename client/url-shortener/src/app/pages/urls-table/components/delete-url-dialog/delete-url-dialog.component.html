@@ -1,0 +1,19 @@
+<div class="inset-0 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-xl w-70">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Delete URL?</h2>
+        <div class="text-right">
+            <button 
+                (click)="onUrlDelete()"
+                class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded"
+            >
+                Delete
+            </button>
+            <button
+                (click)="onCloseDialog()"
+                class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded ml-2"
+            >
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
